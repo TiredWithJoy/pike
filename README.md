@@ -1,6 +1,8 @@
 # pike
 Nonchalant fishing poker game
 
+![Logo](./assets/images/fih.png)
+
 # WHAT IS pike
 
 Pike is an exiting fishing extravaganza that mixes poker and fishing into a
