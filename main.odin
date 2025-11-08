@@ -15,6 +15,15 @@ package main
 
 import "core:fmt"
 
+import "libpike/log"
+import "libpike/poker"
+
 main :: proc() {
-	fmt.println("pike init")
+	log.printl("pike init")
+
+	deck := poker.create_deck()
+
+	// poker.shuffle(&deck)
+
+	poker.print_deck(deck)
 }
