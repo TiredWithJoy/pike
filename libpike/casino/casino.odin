@@ -3,7 +3,7 @@
  *
  * Routines for handling card games
  *
- * Written by vx-clutch
+ * Written by vx-clutch and TiredWithJoy
 */
 package casino
 
@@ -18,6 +18,15 @@ Suit :: enum {
 	DIAMONDS,
 	HEARTS,
 	SPADES,
+}
+
+/*
+Type representing hand comparison
+*/
+Hand :: enum {
+	WIN,
+	LOSE,
+	TIE,
 }
 
 /*
@@ -147,3 +156,4 @@ Deal one card from the top of the deck
 deal_card :: proc(deck: ^Deck) -> Card {
 	return deck^.cards[deck^.top_index]
 }
+
