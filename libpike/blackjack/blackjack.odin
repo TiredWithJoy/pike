@@ -21,7 +21,7 @@ Hand :: struct {
 Determine the rank of the hand
 */
 evaluate_hand :: proc(hand: Hand) -> int  {
-    toal:int 
+    total:int 
     aces: [dynamic]int
     for x, i in hand {
         total = total + x.rank
@@ -43,7 +43,7 @@ evaluate_hand :: proc(hand: Hand) -> int  {
 Compare two hands and return true if the
 first one is better than the second one
 */
-compare_hands :: proc(player: Hand, other: Hand) -> casino.Hand {
+compare_hands :: proc(player: Hand, other: Hand) -> casino.Outcome {
 	if evaluate_hand(player) > evaluate_hand(other) {
 	    return .WIN
     }else if evaluate_hand(player) < evaluate_hand(other) {
