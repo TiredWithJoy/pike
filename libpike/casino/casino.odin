@@ -23,7 +23,7 @@ Suit :: enum {
 /*
 Type representing hand comparison
 */
-Hand :: enum {
+Outcome :: enum {
 	WIN,
 	LOSE,
 	TIE,
