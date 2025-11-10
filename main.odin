@@ -13,33 +13,37 @@
 
 package main
 
+import rl "vendor:raylib"
 
 import "libpike/log"
 import "libpike/casino"
 import "libpike/dialog"
 
+draw :: proc() {
+	log.printl("draw frame")
+	rl.BeginDrawing()
+
+	rl.ClearBackground({160, 200, 255, 255})
+
+	rl.EndDrawing()
+}
+
+update :: proc() {
+	log.printl("update frame")
+}
+
 main :: proc() {
 	log.printl("pike init")
 
-	deck := casino.create_deck()
+	log.printl("start raylib")
 
-	casino.shuffle(&deck)
+	rl.InitWindow(1024, 512, "pike")
 
-	casino.print_deck(deck)
+	for !rl.WindowShouldClose() {
+		draw()
+		update()
+	}
 
-	log.printl("=== guy ===")
-	dialog.get_random(.GUY)
-	dialog.get_random(.GUY)
-	log.printl("=== blackjack ===")
-	dialog.get_random(.BLACKJACK)
-	dialog.get_random(.BLACKJACK)
-	log.printl("=== slots ===")
-	dialog.get_random(.SLOTS)
-	dialog.get_random(.SLOTS)
-	log.printl("=== video poker ===")
-	dialog.get_random(.VIDEOPOKER)
-	dialog.get_random(.VIDEOPOKER)
-	log.printl("=== poker ===")
-	dialog.get_random(.POKER)
-	dialog.get_random(.POKER)
+	log.printl("exiting")
+	rl.CloseWindow()
 }
