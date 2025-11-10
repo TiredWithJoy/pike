@@ -2,7 +2,7 @@ pike --- TODO
 
 Todo:
 
-  * add raylib
+  * log to log file
   * libpike
     * add a sub package for each aspect of the game
 
