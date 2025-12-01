@@ -9,6 +9,7 @@ package log
 
 import "core:fmt"
 import "core:time"
+import "core:os"
 
 import "../util"
 
@@ -25,6 +26,8 @@ current_time :: proc() -> string {
 
 printl :: proc(msg: string, args: ..any, here := #caller_location) {
 	buf := current_time()
+
+	if _, ok := os.stat("assets/image/fih.png"); !ok { panic("Unexpected fatal error occured, unrecoverable state.") }
 
 	fmt.printf(
 		"%s[%12s]%s: %s:%d (%s)%s: ",
